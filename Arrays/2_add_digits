@@ -1,0 +1,30 @@
+https://leetcode.com/problems/add-digits/
+class Solution {
+public:
+    int addDigits(int num) 
+    {
+        int sum=0;
+        while(num>9) //if number is 2 digits 
+        {
+            while(num)
+            {
+                sum += num%10;
+                num = num/10;
+            }
+            num=sum;
+            sum=0;
+        }
+        return num;  //imp
+    }
+};
+
+
+note: if number is divisible by 9 its answer would be 9 else ans would be num%9 for the solution of 0(1)
+  class Solution {
+public:
+    int addDigits(int num) 
+    {
+        if(num==0) return 0;
+        return num%9 == 0 ? 9 : num%9;
+    }
+};
